@@ -116,23 +116,23 @@ details {padding : 1rem; white-space: pre-wrap;}
             <summary>모범답안</summary>
 
             <summary>PERSON_INFO 테이블</summary> <br>
-            <strong> ALTER TABLE</strong> PERSON_INFO;
+            <strong> ALTER TABLE</strong> PERSON_INFO
             <strong> ADD CONSTRAINT</strong> PK_PERSON_INFO_NO
             <strong> PRIMARY KEY</strong>(NO);
          
-            <strong> ALTER TABLE </strong> PERSON_INFO;
+            <strong> ALTER TABLE </strong> PERSON_INFO
             <strong> ADD CONSTRAINT </strong> FK_PERSON_INFO_HOBBY
             <strong> FOREIGN KEY </strong>(H_NAME)
             <STRONG> REFERENCES </STRONG> HOBBY(H_NAME);
             
             
-            <strong> ALTER TABLE </strong> PERSON_INFO;
+            <strong> ALTER TABLE </strong> PERSON_INFO
             <strong> ADD CONSTRAINT </strong> FK_PEROSN_INFO_IDEA
             <strong> FOREIGN KEY </strong> (IDEA)
-            <STRONG> REFERENCES </STRONG>  PROJECT(IDEA);<br>
+            <STRONG> REFERENCES </STRONG>  PROJECT(IDEA);
 
             <summary>PROJECT 테이블</summary> <br>
-            <strong> ALTER TABLE </strong> PROJECT;
+            <strong> ALTER TABLE </strong> PROJECT
             <strong> ADD CONSTRAINT </strong> PK_PROJECT_IDEA
             <strong> PRIMARY KEY </strong>(IDEA);
 
