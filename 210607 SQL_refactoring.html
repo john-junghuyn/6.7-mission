@@ -23,7 +23,7 @@ details {padding : 1rem; white-space: pre-wrap;}
              PERSON_INFO 테이블에는<br>
              NO, NAME, AGE, H_NAME, INTEREST, IDEA 여섯개의 컬럼을,<br>
              HOBBY 테이블에는 <br>
-             H_NAME(취미 이름), H_CATA(활동성 여부(I / O) 둘 중 하나만) 두 개의 컬럼을,<br>
+             H_NAME(취미 이름), H_CATE(활동성 여부(I / O) 둘 중 하나만) 두 개의 컬럼을,<br>
              PROJECT 테이블에는<br>
             IDEA(아이디어), REQUIRMENT_LV(구현 난이도), ESSENTIAL_SKILLS(필요 기술), ESTIMATED_TIME(개발 시간) 세개의 컬럼 존재한다.
       </h4>
@@ -63,11 +63,12 @@ details {padding : 1rem; white-space: pre-wrap;}
             );
 
                   <strong>INSERT</strong> ALL<br> 
-                        <strong>INTO </strong>PERSON_INFO <STRONG>VALUES</STRONG>(1, '조태익', 29, 'COOK', 'BACK END', 'PLANT DIARY');
-                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(2, '이진영', 23, 'EXERCISE', 'ANALYSING DATA', 'GPS_TO_DO');
-                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(3, '정주영', 31, 'GAME', 'BACK END', 'SPORTS DATA');
-                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(4, '이진의', 34, 'HIKING', 'ANALYSING DATA', SMOKING AREA NOTIFY');
-                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(5, '손정현', 28, 'HIKING', 'ANALYSING DATA', 'ALLERGY SEARCH APP');
+                        <strong>INTO </strong>PERSON_INFO <STRONG>VALUES</STRONG>(1, '조태익', 29, 'COOK', 'BACK END', 'PLANT DIARY')
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(2, '이진영', 23, 'EXERCISE', 'ANALYSING DATA', 'GPS_TO_DO')
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(3, '정주영', 31, 'GAME', 'BACK END', 'SPORTS DATA')
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(4, '이진의', 34, 'HIKING', 'ANALYSING DATA', SMOKING AREA NOTIFY')
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(5, '손정현', 28, 'HIKING', 'ANALYSING DATA', 'ALLERGY SEARCH APP')
+                 <strong>SELECT * FROM DUAL;</strong>             
 
 
             <summary> HOBBY 테이블 </summary>
@@ -95,7 +96,7 @@ details {padding : 1rem; white-space: pre-wrap;}
             );
 
 
-            <strong>INTO </strong>PROJECT <strong>VALUES</strong>('SPORTS DATA', 'EASY', 'BIGDATA', 30);
+                  <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('SPORTS DATA', 'EASY', 'BIGDATA', 30);
                   <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('VR GAME', 'HARD', 'VR', 140);	
                   <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('ALLERGY SEARCH APP', 'MID', 'BIGDATA', 30);
                   <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('PLANT DIARY', 'EASY', 'TIME DATA', 40);	
@@ -134,7 +135,7 @@ details {padding : 1rem; white-space: pre-wrap;}
             <strong> ALTER TABLE </strong> PERSON_INFO
             <strong> ADD CONSTRAINT </strong> FK_PEROSN_INFO_IDEA
             <strong> FOREIGN KEY </strong> (IDEA)
-            <STRONG> REFERENCES </STRONG>  PROJECT(IDEA);
+            <STRONG> REFERENCES </STRONG> PROJECT(IDEA);
 
             <summary>PROJECT 테이블</summary> <br>
             <strong> ALTER TABLE </strong> PROJECT
