@@ -21,7 +21,7 @@ details {padding : 1rem; white-space: pre-wrap;}
 
       <h4>1. PERSON_INFO / HOBBY / PROJECT 테이블을 생성하여라. <br><br>
              PERSON_INFO 테이블에는<br>
-             NO, NAME, AGE, HOBBY, INTEREST, PROJECT_IDEA 여섯개의 컬럼을,<br>
+             NO, NAME, AGE, H_NAME, INTEREST, IDEA 여섯개의 컬럼을,<br>
              HOBBY 테이블에는 <br>
              H_NAME(취미 이름), H_CATA(활동성 여부(I / O) 둘 중 하나만) 두 개의 컬럼을,<br>
              PROJECT_IDEA 테이블에는<br>
@@ -38,7 +38,7 @@ details {padding : 1rem; white-space: pre-wrap;}
             NO <strong>NUMBER(3)</strong>,
             NAME <strong>VARCHAR2(20)</strong>,
             AGE <strong>NUMBER(3)</strong>,
-            HOBBY <strong>VARCAHR2(20)</strong>,
+            H_NAME <strong>VARCAHR2(20)</strong>,
             INTEREST <strong>VARCHAR2(20)</strong>,
             IDEA <strong>VARCHAR2(20)</strong>
             );
@@ -155,7 +155,7 @@ details {padding : 1rem; white-space: pre-wrap;}
             <strong>SELECT</strong> PROJECT.IDEA 
             <strong>FROM</strong> PROJECT
             <strong>LEFT JOIN</strong> PERSON_INFO 
-            <strong>ON</strong> PROJECT.idea <strong> = </strong> PERSON_INFO.IDEA 
+            <strong>ON</strong> PROJECT.IDEA <strong> = </strong> PERSON_INFO.IDEA 
             <strong>WHERE</strong> 
                   PERSON_INFO.IDEA <STRONG>IS NULL;</STRONG>;
 
