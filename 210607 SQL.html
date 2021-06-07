@@ -171,11 +171,19 @@ details {padding : 1rem; white-space: pre-wrap;}
       	
 
       <details>
-            <summary>모범 답안</summary>
-            <strong>select</strong> job_title, min_salary, min_salary*1.1 as chagne_sal
-            <strong>from</strong> jobs
-            <strong>where</strong> min_salary < 3000 ;
-                                      110
+           <summary>모범 답안</summary>
+            <strong>CREATE OR REPLACE</strong> PROCEDURE ADD_IDEA(
+            N_IDEA PROJECT.IDEA<STRONG>%TYPE</STRONG>,
+            N_REQ PROJECT.REQUIRMENT_LV<STRONG>%TYPE</STRONG>,
+            N_ESS PROJECT.ESSENTIAL_SKILLS<STRONG>%TYPE</STRONG>,
+            N_EST PROJECT.ESTIMATED_TIME<STRONG>%TYPE</STRONG>,
+           
+            <strong>IS</strong> <BR>
+            <strong>BEGIN</strong> <BR>
+                         <strong>INSERT INTO</strong> PROJECT
+                         <strong>VALUES</strong> (N_IDEA, N_REQ , N_ESS , N_EST );
+            <strong>END;</strong> <BR>/ <BR>
+            <strong>EXEC</strong> ADD_IDEA('POSITION MONITOR', 'HARD', 'VISUAL DATA' ,100 );     
       </details> 
 
 </div>
