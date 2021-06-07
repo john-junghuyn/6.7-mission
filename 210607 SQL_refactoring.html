@@ -1,0 +1,229 @@
+<html>
+<header>
+<title> SQL 문제를 풀어보세요 ✏</title>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<style>
+body {font-family: 'Nanum Gothic', sans-serif;}
+h1 {margin : 1rem;}
+details {padding : 1rem; white-space: pre-wrap;}
+.question {margin : 2rem; padding : 1rem; border: 1px solid gray;}
+</style>
+</header>
+
+<body>
+
+<h2>[SQL 문제를 풀어보세요 👀 - 손정현, 이진영, 이진의, 정주영B, 조태익]</h2>
+
+<h3>  B조 인원들은 최종 프로젝트를 위해 아이디어 회의를 가졌다.  <br>
+      회의 중 각자의 인적 사항, 취미, 아이디어를 일목 요연하게 정리하기로 하였다.
+<br>  SQL 문장을 바탕으로 TABLE을 만들어보고 아래의 문제들을 구현해 보아라.</h3>
+<div class='question' id='Q1'>
+
+      <h4>1. PERSON_INFO / HOBBY / PROJECT 테이블을 생성하여라. <br><br>
+             PERSON_INFO 테이블에는<br>
+             NO, NAME, AGE, H_NAME, INTEREST, IDEA 여섯개의 컬럼을,<br>
+             HOBBY 테이블에는 <br>
+             H_NAME(취미 이름), H_CATA(활동성 여부(I / O) 둘 중 하나만) 두 개의 컬럼을,<br>
+             PROJECT 테이블에는<br>
+            IDEA(아이디어), REQUIRMENT_LV(구현 난이도), ESSENTIAL_SKILLS(필요 기술), ESTIMATED_TIME(개발 시간) 세개의 컬럼 존재한다.
+      </h4>
+      <h5>PERSON_INFO 테이블에 넣을 데이터<br>
+            (1, 조태익, 29, COOK, BACK END, PLANT DIARY)<br>
+            (2, 이진영, 23, EXERCISE, ANALYSING DATA, GPS_TO_DO)<br>
+            (3, 정주영, 31, GAME, BACK END, SPORTS DATA)<br>
+            (4, 이진의, 34, HIKING, ANALYSING DATA, SMOKING AREA NOTIFY)<br>
+            (5, 손정현, 28, HIKING, ANALYSING DATA, ALLERGY SEARCH APP)<br><br>
+      HOBBY 테이블에 넣을 데이터<br>
+            (HIKING, O)<br>
+            (COOK, I)<br>
+            (EXERCISE, O)<br>
+            (GAME, I)<br><br>
+      PROJECT 테이블에 넣을 데이터<br>
+            (SPORTS DATA, EASY, BIGDATA, 30)<br>
+            (VR GAME, HARD, VR, 140)<br>
+            (ALLERGY SEARCH APP, MID, BIGDATA, 30)<br>
+            (PLANT DIARY, EASY, TIME DATA, 40)<br>
+            (GPS_TO_DO, HARD, GPS, 150)<br>
+            (SMOKING AREA NOTIFY, HARD, GPS, 180)<br>
+      </h5>
+      	
+
+      <details>
+            <summary>모범 답안</summary>
+
+            <summary> PERSON_INFO 테이블 </summary>
+            <strong>DROP TABLE</strong> PERSON_INFO;
+            <strong>CREATE TABLE</strong> PERSON_INFO( 
+            NO <strong>NUMBER(3)</strong>,
+            NAME <strong>VARCHAR2(20)</strong>,
+            AGE <strong>NUMBER(3)</strong>,
+            H_NAME <strong>VARCAHR2(20)</strong>,
+            INTEREST <strong>VARCHAR2(20)</strong>,
+            IDEA <strong>VARCHAR2(20)</strong>
+            );
+
+                  <strong>INSERT</strong> ALL<br> 
+                        <strong>INTO </strong>PERSON_INFO <STRONG>VALUES</STRONG>(1, '조태익', 29, 'COOK', 'BACK END', 'PLANT DIARY');
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(2, '이진영', 23, 'EXERCISE', 'ANALYSING DATA', 'GPS_TO_DO');
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(3, '정주영', 31, 'GAME', 'BACK END', 'SPORTS DATA');
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(4, '이진의', 34, 'HIKING', 'ANALYSING DATA', SMOKING AREA NOTIFY');
+                        <strong>INTO </strong>PERSON_INFO <strong>VALUES</strong>(5, '손정현', 28, 'HIKING', 'ANALYSING DATA', 'ALLERGY SEARCH APP');
+
+
+            <summary> HOBBY 테이블 </summary>
+            <strong>DROP TABLE</strong> HOBBY;
+            <strong>CREATE TABLE</strong> HOBBY( 
+            H_NAME <strong>VARCHAR2(30)</strong>,
+            H_CATE <strong>CHAR(2) CONSTRAINT</strong> CK_HOBBY 
+                  <strong> CHECK </strong> (H_CATE <strong> IN </strong> ('I' ,'O'))
+            );
+
+                  <strong>INTO </strong>HOBBY <strong>VALUES</strong>('HIKING','O');	
+                  <strong>INTO </strong>HOBBY <strong>VALUES</strong>('COOK','I'); 
+                  <strong>INTO </strong>HOBBY <strong>VALUES</strong>('EXERCISE','O'); 
+                  <strong>INTO </strong>HOBBY <strong>VALUES</strong>('GAME','I');
+            
+                 	                        
+            <summary>PROJECT 테이블</summary>
+            <strong>DROP TABLE</strong> PROJECT;
+            <strong>CREATE TABLE</strong> PROJECT( 
+            IDEA <strong>VARCHAR2(20)</strong>,
+            REQUIRMENT_LV <strong>VARCHAR2(20)</strong>,
+            ESSENTIAL_SKILLS <strong>VARCHAR2(20))</strong>,
+            ESTIMATED_TIME <strong>NUMBER(3)</strong>,
+            
+            );
+
+
+            <strong>INTO </strong>PROJECT <strong>VALUES</strong>('SPORTS DATA', 'EASY', 'BIGDATA', 30);
+                  <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('VR GAME', 'HARD', 'VR', 140);	
+                  <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('ALLERGY SEARCH APP', 'MID', 'BIGDATA', 30);
+                  <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('PLANT DIARY', 'EASY', 'TIME DATA', 40);	
+                  <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('GPS_TO_DO', 'HARD', 'GPS', 150);
+                  <strong>INSERT INTO </strong> PROJECT <strong> VALUES </strong>('SMOKING AREA NOTIFY', 'HARD', 'GPS', 180);
+                  
+            
+      </details>
+
+</div>
+
+
+<div class=question id=Q2>
+
+      <h4>2. ALTER를 이용하여 각각의 TABLE에 적용하시오. <br>
+            [PERSON_INFO]의 번호를 PK, 취미&프로젝트 아이디어를 FK로,<br>
+            [PROJECT]의 아이디어를 PK로,<br>
+            [HOBBY]의 취미 이름을 PK로 변환하시오.<br>
+
+      </h4>
+      
+      <details>
+            <summary>모범답안</summary>
+
+            <summary>PERSON_INFO 테이블</summary> <br>
+            <strong> ALTER TABLE</strong> PERSON_INFO
+            <strong> ADD CONSTRAINT</strong> PK_PERSON_INFO_NO
+            <strong> PRIMARY KEY</strong>(NO);
+         
+            <strong> ALTER TABLE </strong> PERSON_INFO
+            <strong> ADD CONSTRAINT </strong> FK_PERSON_INFO_HOBBY
+            <strong> FOREIGN KEY </strong>(H_NAME)
+            <STRONG> REFERENCES </STRONG> HOBBY(H_NAME);
+            
+            
+            <strong> ALTER TABLE </strong> PERSON_INFO
+            <strong> ADD CONSTRAINT </strong> FK_PEROSN_INFO_IDEA
+            <strong> FOREIGN KEY </strong> (IDEA)
+            <STRONG> REFERENCES </STRONG>  PROJECT(IDEA);
+
+            <summary>PROJECT 테이블</summary> <br>
+            <strong> ALTER TABLE </strong> PROJECT
+            <strong> ADD CONSTRAINT </strong> PK_PROJECT_IDEA
+            <strong> PRIMARY KEY </strong>(IDEA);
+
+            <summary>HOBBY 테이블</summary> <br>
+            <strong> ALTER TABLE </strong> HOBBY
+            <strong> ADD CONSTRAINT </strong> PK_HOBBY_H_NAME
+            <strong> PRIMARY KEY </strong>(H_NAME);
+         
+</details>
+</div>
+
+<div class='question' id='Q3'>
+
+      <h4>3. PROJECT 테이블에는 6개의 데이터가 들어 있다. 이 중 5명의 조원들에게 선택 받은 IDEA는 5개이다. 이때 조원들에게 선택받지 못한 아이디어를 JOIN을 이용하여 출력하라.
+
+      </h4>
+      
+      <details>
+            <summary>모범 답안</summary>
+            <strong>SELECT</strong> PROJECT.IDEA 
+            <strong>FROM</strong> PROJECT
+            <strong>LEFT JOIN</strong> PERSON_INFO 
+            <strong>ON</strong> PROJECT.IDEA <strong> = </strong> PERSON_INFO.IDEA 
+            <strong>WHERE</strong> 
+                  PERSON_INFO.IDEA <STRONG>IS NULL;</STRONG>;
+
+           
+      </details>
+
+</div>
+
+<div class=question id=Q4>
+      <h4>4. 프로시저 개념을 이용하여 [PROJECT] 테이블에 새로운 아이디어를 추가하라.
+
+      </h4>
+      	
+
+      <details>
+           <summary>모범 답안</summary>
+            <strong>CREATE OR REPLACE</strong> PROCEDURE ADD_IDEA(
+            N_IDEA PROJECT.IDEA<STRONG>%TYPE</STRONG>,
+            N_REQ PROJECT.REQUIRMENT_LV<STRONG>%TYPE</STRONG>,
+            N_ESS PROJECT.ESSENTIAL_SKILLS<STRONG>%TYPE</STRONG>,
+            N_EST PROJECT.ESTIMATED_TIME<STRONG>%TYPE</STRONG>,
+           
+            <strong>IS</strong> <BR>
+            <strong>BEGIN</strong> <BR>
+                         <strong>INSERT INTO</strong> PROJECT
+                         <strong>VALUES</strong> (N_IDEA, N_REQ , N_ESS , N_EST );
+            <strong>END;</strong> <BR>/ <BR>
+            <strong>EXEC</strong> ADD_IDEA('POSITION MONITOR', 'HARD', 'VISUAL DATA' ,100 );     
+      </details> 
+
+</div>
+
+<div class='question' id='Q5'>
+
+      <h4>5. PLS function 기능을 이용하여 'makestar'라는 함수를 만든다. 이 함수는 이름을 입력 받으면 해당 인원이 제시한 IDEA를 모두 *로 대체하여 유출을 막아주는 기능이 있다.<br>
+            함수를 이용하여 암호화한 IDEA와 이름(NAME), 취미(H_NAME), 관심 있는 분야(INTEREST)를 출력하여라.<br><br>
+             코드 예시 : <strong>SELECT</strong> NAME, H_NAME, INTEREST, MAKE_STAR('조태익') AS IDEA <strong>FROM</strong> dual, PERSON_INFO <strong>WHERE</strong> NAME = '조태익'
+      </h4> 
+      
+      <details>
+            <summary>모범 답안</summary>
+            <strong>CREATE OR replace FUNCTION</strong> makestar(v_NAME PERSON_INFO.NAME%<strong>type</strong>) 
+            <strong>RETURN VARCHAR2</strong>
+            <strong>IS</strong>
+                  v_IDEA PROJECT.IDEA%type;
+                  v_NUMBER NUMBER(3);
+                  v_STAR VARCHAR2(20) := '';
+            <strong>BEGIN</strong>
+                  <strong>SELECT </strong> IDEA, length(IDEA)
+                        <strong>INTO</strong> v_IDEA, v_NUMBER
+                  <strong>FROM</strong> PERSON_INFO
+                  <strong>WHERE</strong> NAME = v_NAME;
+                  for i in 1..v_NUMBER loop
+                        v_STAR := v_STAR || '*';
+                  <strong>END</strong> loop;
+                  <strong>RETURN</strong> v_STAR;
+            <strong>END;</strong>
+            /
+
+
+      </details>
+
+</div>
+
+</body>
+</html>
