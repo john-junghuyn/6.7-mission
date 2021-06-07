@@ -74,8 +74,10 @@ CREATE TABLE HOBBY(
     ); 
     
 INSERT INTO HOBBY VALUES 
-	('HIKING', O);
-
+	('HIKING','O');
+	('COOK','I');
+	('EXERCISE','O');
+	('GAME','I');
 COMMIT;
 
 
