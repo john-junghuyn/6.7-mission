@@ -23,7 +23,7 @@ details {padding : 1rem; white-space: pre-wrap;}
              PERSON_INFO 테이블에는<br>
              NO, NAME, AGE, H_NAME, INTEREST, IDEA 여섯개의 컬럼을,<br>
              HOBBY 테이블에는 <br>
-             H_NAME(취미 이름), H_CATA(활동성 여부(I / O) 둘 중 하나만) 두 개의 컬럼을,<br>
+             H_NAME(취미 이름), H_CATE(활동성 여부(I / O) 둘 중 하나만) 두 개의 컬럼을,<br>
              PROJECT_IDEA 테이블에는<br>
             IDEA(아이디어), REQUIRMENT_LV(구현 난이도), ESSENTIAL_SKILLS(필요 기술), ESTIMATED_TIME(개발 시간) 세개의 컬럼 존재한다.
       </h4>
@@ -195,10 +195,7 @@ details {padding : 1rem; white-space: pre-wrap;}
       
       <details>
             <summary>모범 답안</summary>
-            <strong>select</strong> last_name, first_name, salary 
-            <strong>from</strong> employees
-            <strong>where</strong> trunc(months_between(sysdate, hire_date) / 12, 0) >= 20;
-
+        
            
       </details>
 
