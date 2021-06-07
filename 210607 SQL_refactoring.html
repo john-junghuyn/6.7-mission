@@ -206,12 +206,11 @@ details {padding : 1rem; white-space: pre-wrap;}
             <strong>CREATE OR replace FUNCTION</strong> makestar(v_NAME PERSON_INFO.NAME%<strong>type</strong>) 
             <strong>RETURN VARCHAR2</strong>
             <strong>IS</strong>
-                  v_IDEA PROJECT.IDEA%type;
                   v_NUMBER NUMBER(3);
                   v_STAR VARCHAR2(20) := '';
             <strong>BEGIN</strong>
-                  <strong>SELECT </strong> IDEA, length(IDEA)
-                        <strong>INTO</strong> v_IDEA, v_NUMBER
+                  <strong>SELECT </strong> length(IDEA)
+                        <strong>INTO</strong> v_NUMBER
                   <strong>FROM</strong> PERSON_INFO
                   <strong>WHERE</strong> NAME = v_NAME;
                   for i in 1..v_NUMBER loop
