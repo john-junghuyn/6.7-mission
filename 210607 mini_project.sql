@@ -40,6 +40,9 @@ CREATE TABLE PERSON_INFO(
 	
 INSERT INTO BROADCAST VALUES 
 	(1, '조태익', 29, 'cook', 'back end');
+	
+INSERT INTO BROADCAST VALUES
+	(2, '이진영', 23, 'exercise', 'Analyze Data');
 
 
 COMMIT;
