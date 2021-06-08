@@ -95,7 +95,7 @@ left join person_info
 on project.idea = person_info.idea
 where person_info.idea is NULL;
 
-
+-- 강의시간에 배웠던방법
 SELECT PROJECT.IDEA 
 FROM PROJECT,PERSON_INFO
 where PROJECT.idea  =  PERSON_INFO.IDEA(+) and PERSON_INFO.IDEA IS NULL;
