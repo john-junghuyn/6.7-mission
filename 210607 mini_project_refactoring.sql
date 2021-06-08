@@ -96,6 +96,11 @@ on project.idea = person_info.idea
 where person_info.idea is NULL;
 
 
+SELECT PROJECT.IDEA 
+FROM PROJECT,PERSON_INFO
+where PROJECT.idea  =  PERSON_INFO.IDEA(+) and PERSON_INFO.IDEA IS NULL;
+
+
 --4.
 CREATE OR REPLACE PROCEDURE ADD_IDEA(
 	N_IDEA PROJECT.IDEA%TYPE,
